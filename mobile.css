@@ -60,8 +60,7 @@ li { margin-top: 4px; margin-button: 4px; }
 
 
 #time1_container {
-/*  width: 600px; */
-  width: 95%; 
+/*  width: 300px; */
 
   margin: 3vw auto;
 }
@@ -162,4 +161,9 @@ input[type="range"]::-ms-fill-upper {
 
 input[type="range"]:focus::-ms-fill-upper {
   background: #ddd;
+}
+
+.timebar {
+	margin-left: 0px;
+	margin-right: 0px;
 }

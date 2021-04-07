@@ -91,11 +91,18 @@
 
 
 
-<div id="time1_container">
-  <input type="range"  id="timevol" name="timevol" min="480" max="1380" step="30" value="480" oninput="showtimeVal(this.value)" onchange="showtimeVal(this.value)">
+<div id="time1_container" style="margin-left: 0px; margin-right: 0px;">
+  <input type="range"  id="timevol1" name="timevol1" min="480" max="1380" step="30" value="480" oninput="showtimeVal(this.value)" onchange="showtimeVal(this.value)">
 </div>
+<!--div id="bgTime" style="visibility: hidden;"></div-->
 <div id="bgTime"></div>
+<div id="time2_container" style="margin-left: 0px; margin-right: 0px;">
+  <input type="range"  id="timevol2" name="timevol2" min="480" max="1380" step="30" value="1380" oninput="showtimeVal2(this.value)" onchange="showtimeVal2(this.value)">
+</div>
+<!--div id="endTime" style="visibility: hidden;"></div-->
+<div id="endTime"></div>
 
+<div id="showrange2">Time Range: 8:00am - 11:00pm</div>
 
 
 
@@ -134,7 +141,7 @@
 </button>
 </div>
 </div>
-<div>version: 20200407-1419</div>
+<div>version: 20200407-1750</div>
 
 
 
@@ -197,9 +204,20 @@ function showtimeVal(tmpval) {
       var hours = ("00" + Math.floor(tmpval / 60)).slice(-2);
       var mins = ("00" + (tmpval - (hours * 60))).slice(-2);
 
-	$('#showrange').html(hours + ':' + mins);
+	$('#bgTime').html(hours + ':' + mins);
+    $('#showrange2').html('Time Range: ' + formatAMPM($('#bgTime').html()) + ' - ' + formatAMPM($('#endTime').html()));
 
 }
+
+function showtimeVal2(tmpval) {
+      var hours = ("00" + Math.floor(tmpval / 60)).slice(-2);
+      var mins = ("00" + (tmpval - (hours * 60))).slice(-2);
+
+	$('#endTime').html(hours + ':' + mins);
+    $('#showrange2').html('Time Range: ' + formatAMPM($('#bgTime').html()) + ' - ' + formatAMPM($('#endTime').html()));
+
+}
+
 
 function show_my_msg() {
   var x = document.getElementById("snackbar");
