@@ -92,8 +92,9 @@
 
 
 <div id="time1_container">
-  <input type="range">
+  <input type="range"  id="timevol" name="timevol" min="480" max="1380" step="30" value="480" oninput="showtimeVal(this.value)" onchange="showtimeVal(this.value)">
 </div>
+<div id="bgTime"></div>
 
 
 
@@ -133,7 +134,7 @@
 </button>
 </div>
 </div>
-
+<div>version: 20200407-1419</div>
 
 
 
@@ -192,7 +193,13 @@ $("#slider-range").slider({
 
 
 
+function showtimeVal(tmpval) {
+      var hours = ("00" + Math.floor(tmpval / 60)).slice(-2);
+      var mins = ("00" + (tmpval - (hours * 60))).slice(-2);
 
+	$('#showrange').html(hours + ':' + mins);
+
+}
 
 function show_my_msg() {
   var x = document.getElementById("snackbar");
