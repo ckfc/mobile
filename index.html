@@ -3,62 +3,10 @@
   <head>
 
     <style>
-      .booklabel {
-      padding-left: 30px;
-      padding-right:30px;
-    }
-
-    .tremark {
-      vertical-align: middle;
-      background-color: #fdd99b;
-    }
-
-li { margin-top: 4px; margin-button: 4px; }
-
-#snackbar {
-  visibility: hidden;
-  min-width: 250px;
-  margin-left: -125px;
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  border-radius: 2px;
-  padding: 16px;
-  position: fixed;
-  z-index: 1;
-  left: 50%;
-  bottom: 30px;
-  font-size: 17px;
-}
-
-#snackbar.show {
-  visibility: visible;
-  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-  animation: fadein 0.5s, fadeout 0.5s 2.5s;
-}
-
-@-webkit-keyframes fadein {
-  from {bottom: 0; opacity: 0;} 
-  to {bottom: 30px; opacity: 1;}
-}
-
-@keyframes fadein {
-  from {bottom: 0; opacity: 0;}
-  to {bottom: 30px; opacity: 1;}
-}
-
-@-webkit-keyframes fadeout {
-  from {bottom: 30px; opacity: 1;} 
-  to {bottom: 0; opacity: 0;}
-}
-
-@keyframes fadeout {
-  from {bottom: 30px; opacity: 1;}
-  to {bottom: 0; opacity: 0;}
-}
     </style>    
 
     <base target="_top">
+	<link rel="stylesheet" type="text/css" href="mobile.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
   </head>
@@ -74,13 +22,13 @@ li { margin-top: 4px; margin-button: 4px; }
     <p id="GFG_DOWN"> 
     </p-->
 
-<div id="room_title_div" style='background-color:#fcc55c; width:700px;padding:10px; border:1px green solid;'>
+<div id="room_title_div" style= 'background-color:#fcc55c;' class='title_div'>
   <b>各個房間預約情況</b>
 </div>
-<div id="show_date_div" style='background-color:#fbd180; width:700px;padding:10px; border:1px green solid;'>
+<div id="show_date_div" style='background-color:#fbd180;' class='title_div'>
     <div>Date:<span id="testspan">未有選擇日期</span></div>
 </div>
-<div id="room_div" style='background-color:#fdda96; width:700px;padding:10px; border:1px green solid; margin-bottom: 7px;'>
+<div id="room_div" style='background-color:#fdda96;margin-bottom: 7px;' class='title_div'>
   <div>
       <div>11/F Meeting Room</div>
       <ul id="r11m_list"></ul>
@@ -106,7 +54,7 @@ li { margin-top: 4px; margin-button: 4px; }
 
 
 
-<div id="date_div" style='background-color:#9b9bfb; width:700px;padding:10px; border:1px green solid; margin-bottom: 7px;'>
+<div id="date_div" style='background-color:#9b9bfb; margin-bottom: 7px;' class='title_div'>
     <label>請選擇日期:</label>
     <input type='date' id='tmpdate' name='date'>
     <button id='querybooking'>查詢當天訂房情況</button>    
@@ -115,10 +63,10 @@ li { margin-top: 4px; margin-button: 4px; }
 
 
 
-<div id="user_div" style='background-color:#b9c15a; width:700px;padding:10px; border:1px green solid;'>
+<div id="user_div" style='background-color:#b9c15a;' class='title_div'>
   <b>使用者資料</b>
 </div>
-<div id="user_info_div" style='background-color:yellow; width:700px;padding:10px; border:1px green solid;'>
+<div id="user_info_div" style='background-color:yellow;' class='title_div'>
 
     <span style="width:300px;">UserName:</span> <input type="text" value="" id="userid"><span id="admin" style="width:300px;"></span>   <br><br>
     Password: <input type="password" value="" id="userpw"><br><br>
@@ -128,11 +76,11 @@ li { margin-top: 4px; margin-button: 4px; }
 
 
 
-<div id="room_title_div" style='background-color:#b9c15a; width:700px;padding:10px; border:1px green solid;'>
+<div id="room_title_div" style='background-color:#b9c15a; padding:10px;' class='title_div'>
   <b>訂房資料輸入</b>
 </div>
-<div id="apply_room_div" style='background-color:yellow; width:700px;padding:10px; border:1px green solid;'>
-<div id="time-range" style="width:300px; margin-left:10px;">
+<div id="apply_room_div" style='background-color:yellow; padding:10px;' class='title_div'>
+<div id="time-range" style="width:96%; margin-left:10px;">
   <p>Time Range: <span id='time01' class="slider-time">08:00</span> - <span id='time02' class="slider-time">23:00</span></p>
   <div class="sliders_step1">
     <div id="slider-range"></div>
