@@ -81,7 +81,7 @@
 </div>
 <div id="apply_room_div" style='background-color:yellow; padding:10px;' class='title_div'>
 <div id="time-range" style="width:96%; margin-left:10px;">
-  <p>Time Range: <span id='time01' class="slider-time">08:00</span> - <span id='time02' class="slider-time">23:00</span></p>
+  <p>Time Range: <span id='timexx01' class="slider-time">08:00</span> - <span id='timexx02' class="slider-time">23:00</span></p>
   <div class="sliders_step1">
     <div id="slider-range"></div>
   </div>
@@ -91,15 +91,15 @@
 
 
 
-<div id="time1_container" style="margin: 20px 10px 20px 10px; width:80%">
+<div id="time1_container" style="margin: auto; padding-top: 20px; padding-bottom: 20px; width:80%">
   <input type="range"  id="timevol1" name="timevol1" min="480" max="1380" step="30" value="480" oninput="showtimeVal(this.value)" onchange="showtimeVal(this.value)">
 </div>
-<div id="bgTime" style="visibility: hidden;">08:00</div>
+<div id="time01" class="timeblock">08:00</div>
 <!--div id="bgTime">08:00</div-->
-<div id="time2_container" style="margin: 20px 10px 20px 10px; width:80%">
+<div id="time2_container" style="margin: auto; padding-top: 20px; padding-bottom: 20px; width:80%">
   <input type="range"  id="timevol2" name="timevol2" min="480" max="1380" step="30" value="1380" oninput="showtimeVal2(this.value)" onchange="showtimeVal2(this.value)">
 </div>
-<div id="endTime" style="visibility: hidden;">23:00</div>
+<div id="time02" class="timeblock">23:00</div>
 <!--div id="endTime">23:00</div-->
 
 <div id="showrange2">Time Range: 8:00am - 11:00pm</div>
@@ -141,7 +141,7 @@
 </button>
 </div>
 </div>
-<div>version: 20200407-1750</div>
+<div style='font-size: x-small;'>version: 20210408-1004</div>
 
 
 
@@ -204,8 +204,8 @@ function showtimeVal(tmpval) {
       var hours = ("00" + Math.floor(tmpval / 60)).slice(-2);
       var mins = ("00" + (tmpval - (hours * 60))).slice(-2);
 
-	$('#bgTime').html(hours + ':' + mins);
-    $('#showrange2').html('Time Range: ' + formatAMPM($('#bgTime').html()) + ' - ' + formatAMPM($('#endTime').html()));
+	$('#time01').html(hours + ':' + mins);
+    $('#showrange2').html('Time Range: ' + formatAMPM($('#time01').html()) + ' - ' + formatAMPM($('#time02').html()));
 
 }
 
@@ -213,8 +213,8 @@ function showtimeVal2(tmpval) {
       var hours = ("00" + Math.floor(tmpval / 60)).slice(-2);
       var mins = ("00" + (tmpval - (hours * 60))).slice(-2);
 
-	$('#endTime').html(hours + ':' + mins);
-    $('#showrange2').html('Time Range: ' + formatAMPM($('#bgTime').html()) + ' - ' + formatAMPM($('#endTime').html()));
+	$('#time02').html(hours + ':' + mins);
+    $('#showrange2').html('Time Range: ' + formatAMPM($('#time01').html()) + ' - ' + formatAMPM($('#time02').html()));
 
 }
 
