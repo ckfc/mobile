@@ -54,10 +54,18 @@ li { margin-top: 4px; margin-button: 4px; }
 
 .title_div {
 	width:100%;
-	padding:0px; 
+	padding:1px 3px 1px 3px; 
 	border:1px green solid;
 	font-size: 12pt;
 }
+
+.content_div {
+	width:100%;
+	padding:1px 3px 1px 3px; 
+	border:1px green solid;
+	font-size: 8pt;
+}
+
 
 
 #time1x_container {
