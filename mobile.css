@@ -10,6 +10,13 @@
 
 li { margin-top: 4px; margin-button: 4px; }
 
+ul.no-bullets {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+}
+
+
 #snackbar {
   visibility: hidden;
   min-width: 250px;
@@ -54,19 +61,21 @@ li { margin-top: 4px; margin-button: 4px; }
 
 .title_div {
 	width:100%;
-	padding:1px 3px 1px 3px; 
+	
 	border:1px green solid;
 	font-size: 12pt;
 }
 
 .content_div {
 	width:100%;
-	padding:1px 3px 1px 3px; 
+	
 	border:1px green solid;
 	font-size: 8pt;
 }
 
-
+.inner_div {
+ margin:8px 8px 8px 8px;
+}
 
 #time1x_container {
 /*  width: 300px; */
