@@ -21,12 +21,12 @@ function chkbox_liststr(tmpobj, room_para, tdate_str, userid, admin) {
                 
                 }    
                 if ((userid == (q[2])) || (admin.length > 0)) {
-                  output += '<li><input type="checkbox" name="cancelchk" id="' + key + '" value="' + tdate_str+ ',' + q[0]+ ',' + q[1]+ ','+q[2] + '"/>' +
-                            '<label for="' + key + '">' + q[1] + '</label><label class="booklabel">' + q[2] + '</label>' + remarkcontent + '</li>';
+                  output += '<input type="checkbox" name="cancelchk" id="' + key + '" value="' + tdate_str+ ',' + q[0]+ ',' + q[1]+ ','+q[2] + '"/>' +
+                            '<label for="' + key + '">' + q[1] + '</label><label class="booklabel">' + q[2] + '</label>' + remarkcontent + '<br>' ;
 
                 }    
                 else {
-                  output += '<li>' + '<label for="' + key + '">' + q[1] + '</label><label class="booklabel">' + q[2] + '</label>' + remarkcontent + '</li>';
+                  output += '<label for="' + key + '">' + q[1] + '</label><label class="booklabel">' + q[2] + '</label>' + remarkcontent + '<br>' ;
 
                 }        
 //                output += '<li><input type="checkbox" name="cancelchk" id="' + key + '" value="' + tdate_str+ ',' + q[0]+ ',' + q[1]+ ','+q[2] + '"/>' +
@@ -58,7 +58,7 @@ $.ajax({
     },
     success: function(response) {
 
-    $('#r11m_list').empty(); 
+    $('#r11m_div').empty(); 	
     try {
         var display_msg_status = false;      
         var obj = JSON.parse(response);  //[["11m","02:00pm-03:00pm","rudy","0200  meeting room half hour"],["11m","03:30pm-04:00pm","mary","mary job"]]
@@ -98,25 +98,25 @@ $.ajax({
 
           if (b == '11m') {   
             tmp_chkbox_content = chkbox_liststr(obj[b], '11m', tmp_date_str, userid, admin);
-            $('#r11m_list').html(tmp_chkbox_content);
+			$('#r11m_div').html(tmp_chkbox_content);
           }  
           else if (b == '11b') {  
             tmp_chkbox_content = chkbox_liststr(obj[b], '11b', tmp_date_str, userid, admin);
-            $('#r11b_list').html(tmp_chkbox_content);
+            $('#r11b_div').html(tmp_chkbox_content);
           }  
           else if (b == '25i') {
             tmp_chkbox_content = chkbox_liststr(obj[b], '25i', tmp_date_str, userid, admin);
-            $('#r25i_list').html(tmp_chkbox_content);
+            $('#r25i_div').html(tmp_chkbox_content);
           }  
 
           else if (b == '25m') {
             tmp_chkbox_content = chkbox_liststr(obj[b], '25m', tmp_date_str, userid, admin);
-            $('#r25m_list').html(tmp_chkbox_content);
+            $('#r25m_div').html(tmp_chkbox_content);
           }  
 
           else if (b == '25c') {  
             tmp_chkbox_content = chkbox_liststr(obj[b], '25c', tmp_date_str, userid, admin);
-            $('#r25c_list').html(tmp_chkbox_content);
+            $('#r25c_div').html(tmp_chkbox_content);
           }  
          }
               
@@ -207,25 +207,25 @@ $.ajax({
 
           if (b == '11m') {   
             tmp_chkbox_content = chkbox_liststr(obj[b], '11m', tmp_date_str, userid, admin);
-            $('#r11m_list').html(tmp_chkbox_content);
+            $('#r11m_div').html(tmp_chkbox_content);
           }  
           else if (b == '11b') {  
             tmp_chkbox_content = chkbox_liststr(obj[b], '11b', tmp_date_str, userid, admin);
-            $('#r11b_list').html(tmp_chkbox_content);
+            $('#r11b_div').html(tmp_chkbox_content);
           }  
           else if (b == '25i') {
             tmp_chkbox_content = chkbox_liststr(obj[b], '25i', tmp_date_str, userid, admin);
-            $('#r25i_list').html(tmp_chkbox_content);
+            $('#r25i_div').html(tmp_chkbox_content);
           }  
 
           else if (b == '25m') {
             tmp_chkbox_content = chkbox_liststr(obj[b], '25m', tmp_date_str, userid, admin);
-            $('#r25m_list').html(tmp_chkbox_content);
+            $('#r25m_div').html(tmp_chkbox_content);
           }  
 
           else if (b == '25c') {  
             tmp_chkbox_content = chkbox_liststr(obj[b], '25c', tmp_date_str, userid, admin);
-            $('#r25c_list').html(tmp_chkbox_content);
+            $('#r25c_div').html(tmp_chkbox_content);
           }  
          }
               
@@ -281,7 +281,6 @@ $.ajax({
   },
     success: function(response) {
 
-    //$('#r11m_list').empty(); 
     try {
         var display_msg_status = false;
         var obj = JSON.parse(response);  //[["11m","02:00pm-03:00pm","rudy","0200  meeting room half hour"],["11m","03:30pm-04:00pm","mary","mary job"]]
@@ -317,31 +316,31 @@ $.ajax({
           
 
           if (b == '11m') { 
-            $('#r11m_list').empty();   
+            $('#r11m_div').empty();   
             tmp_chkbox_content = chkbox_liststr(obj[b], '11m', tmp_date_str, userid, admin);
-            $('#r11m_list').html(tmp_chkbox_content);
+            $('#r11m_div').html(tmp_chkbox_content);
           }  
           else if (b == '11b') {  
-            $('#r11b_list').empty();   
+            $('#r11b_div').empty();   
             tmp_chkbox_content = chkbox_liststr(obj[b], '11b', tmp_date_str, userid, admin);
-            $('#r11b_list').html(tmp_chkbox_content);
+            $('#r11b_div').html(tmp_chkbox_content);
           }  
           else if (b == '25i') {
-            $('#r25i_list').empty();   
+            $('#r25i_div').empty();   
             tmp_chkbox_content = chkbox_liststr(obj[b], '25i', tmp_date_str, userid, admin);
-            $('#r25i_list').html(tmp_chkbox_content);
+            $('#r25i_div').html(tmp_chkbox_content);
           }  
 
           else if (b == '25m') {
-            $('#r25m_list').empty();   
+            $('#r25m_div').empty();   
             tmp_chkbox_content = chkbox_liststr(obj[b], '25m', tmp_date_str, userid, admin);
-            $('#r25m_list').html(tmp_chkbox_content);
+            $('#r25m_div').html(tmp_chkbox_content);
           }  
 
           else if (b == '25c') {  
-            $('#r25c_list').empty();   
+            $('#r25c_div').empty();   
             tmp_chkbox_content = chkbox_liststr(obj[b], '25c', tmp_date_str, userid, admin);
-            $('#r25c_list').html(tmp_chkbox_content);
+            $('#r25c_div').html(tmp_chkbox_content);
           }  
          }
 
