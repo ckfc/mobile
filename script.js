@@ -17,20 +17,18 @@ function chkbox_liststr(tmpobj, room_para, tdate_str, userid, admin) {
                   remarkcontent = '<label class="booklabel">'  + q[3] + '</label>';
                 }
                 else { 
-                  remarkcontent = '<textarea class="tremark"  rows="4" cols="30" readonly>'  + q[3] + '</textarea>';
+                  remarkcontent = '<textarea class="tremark" style="fontSize:6px;"  rows="4" cols="30" readonly>'  + q[3] + '</textarea>';
                 
                 }    
                 if ((userid == (q[2])) || (admin.length > 0)) {
-                  output += '<input type="checkbox" name="cancelchk" id="' + key + '" value="' + tdate_str+ ',' + q[0]+ ',' + q[1]+ ','+q[2] + '"/>' +
-                            '<label for="' + key + '">' + q[1] + '</label><label class="booklabel">' + q[2] + '</label>' + remarkcontent + '<br>' ;
+                  output += '<input type="checkbox"  style="vertical-align:middle" name="cancelchk" id="' + key + '" value="' + tdate_str+ ',' + q[0]+ ',' + q[1]+ ','+q[2] + '"/>' +
+                            '<label for="' + key + '"  style="vertical-align:sub">' + q[1] + '</label><label class="booklabel"  style="vertical-align:sub">' + q[2] + '</label>' + remarkcontent + '<br>' ;
 
                 }    
                 else {
-                  output += '<label for="' + key + '">' + q[1] + '</label><label class="booklabel">' + q[2] + '</label>' + remarkcontent + '<br>' ;
+                  output += '<label for="' + key + '"  style="vertical-align:sub">' + q[1] + '</label><label class="booklabel"  style="vertical-align:sub">' + q[2] + '</label>' + remarkcontent + '<br>' ;
 
                 }        
-//                output += '<li><input type="checkbox" name="cancelchk" id="' + key + '" value="' + tdate_str+ ',' + q[0]+ ',' + q[1]+ ','+q[2] + '"/>' +
-//                          '<label for="' + key + '">' + q[1] + '</label><label class="booklabel">' + q[2] + '</label>' + remarkcontent + '</li>';
 
                   }
 
