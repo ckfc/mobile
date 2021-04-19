@@ -258,7 +258,10 @@ $.ajax({
   show_my_msg();
 
 
-  var t0018_server_create_booking = "https://script.google.com/macros/s/AKfycbxe0oFagF-cypfucxqyjBH-53Q4pmp-UZjC5DXdl5IFK6X32zn25tTZmFtpPbt0L4Wf/exec"
+  //var t0018_server_create_booking = "https://script.google.com/macros/s/AKfycbxe0oFagF-cypfucxqyjBH-53Q4pmp-UZjC5DXdl5IFK6X32zn25tTZmFtpPbt0L4Wf/exec"
+
+  var t0018_server_create_booking = "https://script.google.com/macros/s/AKfycbx1jfqn8fY-Nl3FM0y2WVSbuBOua1M-1-Dcmer69WwsYBBdxsI0GgsVqGysZsM5fPTVcA/exec"
+
 
   //alert($('#remark_area').val())
 
