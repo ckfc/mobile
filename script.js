@@ -43,16 +43,16 @@ $(document).ready(function(){
 
 $("#querybooking").click(function(){   
 
-var t0018_server_create_datasheet = "https://script.google.com/macros/s/AKfycbw7ZelHl9uwIggm1LJ6TmnxkCFUNQfADcjXqQXYQgdPpJ3EZh9KkLbVNSHfc5xYkZor/exec"
-// imp1
+var t0018_server_display_booking = "https://script.google.com/macros/s/AKfycbw7ZelHl9uwIggm1LJ6TmnxkCFUNQfADcjXqQXYQgdPpJ3EZh9KkLbVNSHfc5xYkZor/exec"
+
 $.ajax({
-    url: t0018_server_create_datasheet,
+    url: t0018_server_display_booking,
 
     data: {
         "tmpdate": $('#tmpdate').val(),
         "userid":$('#userid').val(),
         "userpw":$('#userpw').val(),
-        //"mdate": "2021-03-02" ,
+        //"tmpdate": "2021-03-02" ,
     },
     success: function(response) {
 
@@ -93,6 +93,17 @@ $.ajax({
             $('#testspan').text(obj[b]);
             tmp_date_str = obj[b];
           }
+		  
+          if (b=='link') {
+			tmp_link = obj[b];  
+			tmp_link = "<a href='" + tmp_link + "'  target='_blank'>請按這裏觀看" + tmp_date_str + "時間表</a>"
+			
+			 target="_blank"
+			
+            $('#link_div').html(tmp_link);
+
+          }          
+		  
 
           if (b == '11m') {   
             tmp_chkbox_content = chkbox_liststr(obj[b], '11m', tmp_date_str, userid, admin);
@@ -258,12 +269,8 @@ $.ajax({
   show_my_msg();
 
 
-  //var t0018_server_create_booking = "https://script.google.com/macros/s/AKfycbxe0oFagF-cypfucxqyjBH-53Q4pmp-UZjC5DXdl5IFK6X32zn25tTZmFtpPbt0L4Wf/exec"
-
   var t0018_server_create_booking = "https://script.google.com/macros/s/AKfycbxKa_9UshelXmQZpriMSacXKygvH22LN7tO14GxDutqzLWabZJlSlXjtfWW7hveLBdA/exec"
 
-
-  //alert($('#remark_area').val())
 
 $.ajax({
 
@@ -304,6 +311,14 @@ $.ajax({
           if (b=='admin') {
             admin = obj[b];
             $('#admin').text(admin);
+
+          }          
+
+          if (b=='link') {
+			tmp_link = obj[b];  
+			tmp_link = "<a href='" + tmp_link + "' target='_blank'> Click here for the time table link</a>"
+			
+            $('#link_div').html(tmp_link);
 
           }          
 

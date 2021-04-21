@@ -17,9 +17,14 @@
 <div id="room_title_div" style= 'background-color:#fcc55c;' class='title_div'>
   <b>各個房間預約情況</b>
 </div>
+
+
+
 <div id="show_date_div" style='background-color:#fbd180;' class='title_div'>
     <div>Date:<span id="testspan">未有選擇日期</span></div>
 </div>
+
+
 <div id="room_div" style='background-color:#fdda96;margin-bottom: 7px;' class='content_div'>
   <div>
   <div>
@@ -55,12 +60,16 @@
 
 
 
+<div id="link_div" style='background-color:#fbd180;margin-bottom: 6px;' class='title_div'>
+    
+</div>
 
 
 <div id="date_div" style='background-color:#9b9bfb; margin-bottom: 7px;' class='title_div'>
     <label>請選擇日期:</label>
     <input type='date' id='tmpdate' name='date'>
-    <button id='querybooking'>查詢當天訂房情況</button>    
+    <button id='querybooking'>查詢當天訂房情況</button>
+    <button id='quickquerybooking' style="margin-left: 20px;" >快速取得當天訂房情況</button>    
 </div>
 
 
@@ -105,7 +114,7 @@
   <input type="radio" id="r11m" name="room" style="vertical-align:middle"  value="r11m">
   <label for="r11m" style="vertical-align:sub">11/F Meeting Room</label><br>
   <input type="radio" id="r11b" name="room" style="vertical-align:middle"  value="r11b">
-  <label for="r11b" style="vertical-align:sub">11/F Board Room</label><br>
+  <label for="r11b" style="vertical-align:sub">11/F Board Room (Note: only administrator can book this room)</label><br>
   <input type="radio" id="r25i" name="room" style="vertical-align:middle"  value="r25i">
   <label for="r25i" style="vertical-align:sub">25/F Interview Room</label><br>
   <input type="radio" id="r25m" name="room" style="vertical-align:middle" value="r25m">
