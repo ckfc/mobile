@@ -12,8 +12,50 @@
   </head>
   <body>
 
-    <div id="11m"></div>
+    <!--div id="11m"></div-->
 
+
+<div id="user_div" style='background-color:#b9c15a;' class='title_div'>
+  <b>使用者資料</b>
+</div>
+<div id="user_info_div" style='background-color:yellow; margin-bottom:4px;' class='content_div'>
+<div class="inner_div">
+    <span style="width:300px;">UserName:</span> <input type="text" value="" id="userid"><span id="admin" style="width:300px;"></span>   <br><br>
+    Password: <input type="password" value="" id="userpw"><br><br>
+    <input type="checkbox" name="pw_reverse" onclick="pwFunction()">Show Password
+</div>
+</div>
+
+
+
+
+
+
+<div id="date_div" style='background-color:#9b9bfb; margin-bottom: 7px; height:66px;' class='title_div'>
+    <div>
+	<label>請選擇日期:</label>
+    <input type='date' id='tmpdate' name='date'>
+    <button id='querybooking' style="float:right;">查詢當天訂房情況</button>
+	</div>
+	<div>
+    <button id='quickquerybooking' style="float:right; margin-top:10px;" >快速取得當天訂房情況</button>    
+	</div>
+	
+	<div>
+    <button id='test_btn' style="float:right; margin-top:10px;" onclick="justtest()" >Test Btn</button>    
+	</div>
+
+
+	
+</div>
+
+
+
+
+
+
+
+<div id="room_full_div" style="display: none;">
 <div id="room_title_div" style= 'background-color:#fcc55c;' class='title_div'>
   <b>各個房間預約情況</b>
 </div>
@@ -54,6 +96,12 @@
   </div>
   </div>
 </div>
+
+</div>
+
+
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css" />
@@ -65,30 +113,14 @@
 </div>
 
 
-<div id="date_div" style='background-color:#9b9bfb; margin-bottom: 7px; height:66px;' class='title_div'>
-    <div>
-	<label>請選擇日期:</label>
-    <input type='date' id='tmpdate' name='date'>
-    <button id='querybooking' style="float:right;">查詢當天訂房情況</button>
-	</div>
-	<div>
-    <button id='quickquerybooking' style="float:right; margin-top:10px;" >快速取得當天訂房情況</button>    
-	</div>
-</div>
 
 
 
 
-<div id="user_div" style='background-color:#b9c15a;' class='title_div'>
-  <b>使用者資料</b>
-</div>
-<div id="user_info_div" style='background-color:yellow;' class='content_div'>
-<div class="inner_div">
-    <span style="width:300px;">UserName:</span> <input type="text" value="" id="userid"><span id="admin" style="width:300px;"></span>   <br><br>
-    Password: <input type="password" value="" id="userpw"><br><br>
-    <input type="checkbox" name="pw_reverse" onclick="pwFunction()">Show Password
-</div>
-</div>
+
+
+
+
 
 
 
@@ -160,7 +192,7 @@
 </div>
 
 </div>
-<div style='font-size: x-small;'>version: 20210422-1800</div>
+<div style='font-size: x-small;'>version: 20210423-1800</div>
 
 
 
@@ -252,6 +284,13 @@ function pwFunction() {
         x.type = "password";
       }
  }
+ 
+ 
+function justtest() {
+    var x = document.getElementById("room_full_div");
+		x.style="";
+	alert('Hi');
+} 
 
   
 
