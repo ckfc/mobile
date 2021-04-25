@@ -7,6 +7,10 @@
       vertical-align: middle;
       background-color: #fdd99b;
     }
+	
+	.r11b_class {
+		display: none;
+	}
 
 li { margin-top: 4px; margin-button: 4px; }
 
